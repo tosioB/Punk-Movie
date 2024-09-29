@@ -1,0 +1,76 @@
+@import "./theme.scss";
+@import "./font.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Noto Sans KR" sans-serif;
+  font-size: 62.5%;
+  letter-spacing: -0.6px;
+  background-color: $background-color;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%; /* 화면이 작아질 때 폰트 크기 줄이기 */
+  }
+}
+ul {
+  list-style: none;
+}
+.btn {
+  height: 3.2rem;
+  padding: 0 1.2rem;
+  background-color: $main-color;
+  border: none;
+  border-radius: 0.4rem;
+  color: #fff;
+  cursor: pointer;
+}
+.inp-box {
+  input[type="text"] {
+    height: 3.2rem;
+    padding: 0 1.2rem;
+    background-color: #fff;
+    border: 1px solid;
+    border-color: $border-color;
+    border-radius: 0.4rem;
+    color: #000;
+    &:focus {
+      outline: 1px solid $main-color;
+      outline-offset: -1px;
+      background-color: $soft-color;
+    }
+  }
+}
+
+.movie-swiper {
+  .swiper-nav-btn {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    font-size: 0;
+    background: no-repeat 50% 50% / cover;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+    &::after {
+      display: none;
+    }
+    &.swiper-button-prev {
+      left: 3%;
+      background-image: url(/src/assets/images/swiper-prev.svg);
+    }
+    &.swiper-button-next {
+      right: 3%;
+      background-image: url(/src/assets/images/swiper-next.svg);
+    }
+  }
+}

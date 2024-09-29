@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/src/assets/font/NotoSansKR-Light.ttf") format("truetype");
+  font-weight: 300; /* 라이트 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/src/assets/font/NotoSansKR-Regular.ttf") format("truetype");
+  font-weight: 400; /* 레귤러 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/src/assets/font/NotoSansKR-Medium.ttf") format("truetype");
+  font-weight: 500; /* 미디엄 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/src/assets/font/NotoSansKR-SemiBold.ttf") format("truetype");
+  font-weight: 600; /* 세미볼드 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("/src/assets/font/NotoSansKR-Bold.ttf") format("truetype");
+  font-weight: 700; /* 볼드 */
+  font-style: normal;
+}

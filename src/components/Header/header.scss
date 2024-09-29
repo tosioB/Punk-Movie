@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 1;
+  .logo {
+    height: 5.2rem;
+    a {
+      display: block;
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .header-right {
+    display: flex;
+    gap: 0.8rem;
+    .btn-box {
+      display: flex;
+      gap: 0.8rem;
+    }
+  }
+}
