@@ -1,12 +1,14 @@
 import NowPlayingMovie from "../../components/NewPlayingMovie/NewPlayingMovie";
-import Upcoming from "../../components/Upcoming/Upcoming";
+import PopularMovie from "../../components/PopularMovie/PopularMovie";
+import UpcomingMovie from "../../components/UpcomingMovie/UpcomingMovie";
 
 function Home() {
   return (
     <>
       <div className="punk-movie">
         <NowPlayingMovie />
-        <Upcoming />
+        <UpcomingMovie />
+        <PopularMovie />
       </div>
     </>
   );

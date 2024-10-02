@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import "./upcoming.scss";
-import baseURL from "../../assets/data/data";
-import { Link } from "react-router-dom";
+import "./style/UpcomingMovie.scss";
+import UpcomingMovieCard from "./UIElement/UpcomingMovieCard";
 
-function Upcoming() {
+function UpcomingMovie() {
   const [upcomingMovie1, setUpcomingMovie1] = useState();
   const [upcomingMovie2, setUpcomingMovie2] = useState();
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -11,7 +10,7 @@ function Upcoming() {
   const scrollRefRight = useRef(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchUpcomingMovies = async () => {
       const urls = [
         "https://api.themoviedb.org/3/movie/upcoming?language=ko&page=3",
         "https://api.themoviedb.org/3/movie/upcoming?language=ko&page=4"
@@ -47,7 +46,7 @@ function Upcoming() {
       }
     };
 
-    fetchData();
+    fetchUpcomingMovies();
   }, []);
 
   useEffect(() => {
@@ -67,7 +66,7 @@ function Upcoming() {
           behavior: "smooth"
         });
       }
-    }, 1);
+    }, 20);
 
     return () => {
       clearInterval(intervalLeft);
@@ -75,6 +74,7 @@ function Upcoming() {
     };
   }, []);
 
+  // upcomingMovie2가 변경될 때 scrollRefRight 요소의 스크롤 위치를 가장 오른쪽으로 설정
   useEffect(() => {
     if (scrollRefRight.current) {
       scrollRefRight.current.scrollLeft = scrollRefRight.current.scrollWidth;
@@ -82,52 +82,22 @@ function Upcoming() {
   }, [upcomingMovie2]);
 
   return (
-    <div className="upcoming main-sec">
-      <h2 className="main-title">개봉예정</h2>
+    <section className="main-sec upcoming-movie">
+      <h2 className="main-title">다가오는 영화</h2>
 
       <div className="movie-list left" ref={scrollRefLeft}>
         {upcomingMovie1?.map((movie) => {
-          return (
-            <Link
-              key={movie.id}
-              to="/Detail"
-              state={{ movie }}
-              className="movie-box"
-            >
-              <span className="img-box">
-                <img src={baseURL + movie.backdrop_path} alt={movie.title} />
-              </span>
-              <div className="txt-box">
-                <p className="title">{movie.title}</p>
-                <p className="text">Upcoming</p>
-              </div>
-            </Link>
-          );
+          return <UpcomingMovieCard key={movie.id} movie={movie} />;
         })}
       </div>
 
       <div className="movie-list right" ref={scrollRefRight}>
         {upcomingMovie2?.map((movie) => {
-          return (
-            <Link
-              key={movie.id}
-              to="/Detail"
-              state={{ movie }}
-              className="movie-box"
-            >
-              <span className="img-box">
-                <img src={baseURL + movie.backdrop_path} alt={movie.title} />
-              </span>
-              <div className="txt-box">
-                <p className="title">{movie.title}</p>
-                <p className="text">Upcoming</p>
-              </div>
-            </Link>
-          );
+          return <UpcomingMovieCard key={movie.id} movie={movie} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
-export default Upcoming;
+export default UpcomingMovie;

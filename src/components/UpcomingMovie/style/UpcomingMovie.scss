@@ -1,4 +1,4 @@
-.upcoming {
+.upcoming-movie {
   .movie-list {
     display: flex;
     gap: 2rem;
@@ -9,7 +9,7 @@
     }
     .movie-box {
       min-width: 46rem;
-      border-radius: 2rem;
+      border-radius: 4rem 2rem;
       overflow: hidden;
       position: relative;
       .img-box {
@@ -17,7 +17,9 @@
         aspect-ratio: 16 / 9;
 
         img {
+          display: block;
           width: 100%;
+          height: 100%;
         }
       }
       .txt-box {

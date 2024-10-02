@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import baseURL from "../../assets/data/data";
-import "./newPlayingMovie.scss";
+import baseURL from "../../assets/data/baseURL";
+import "./style/newPlayingMovie.scss";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +14,7 @@ function NowPlayingMovie() {
   const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchNowPlayingMovies = async () => {
       const url =
         "https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1";
       const options = {
@@ -39,44 +39,49 @@ function NowPlayingMovie() {
       }
     };
 
-    fetchData();
+    fetchNowPlayingMovies();
   }, []);
 
   return (
-    <Swiper
-      navigation={{
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      }}
-      slidesPerView={1.2}
-      spaceBetween={20}
-      centeredSlides={true}
-      loop={true}
-      modules={[Navigation]}
-      className="movie-swiper new-playing-movie"
-    >
-      {nowPlayingMovie?.map((movie) => {
-        return (
-          <SwiperSlide key={movie.id}>
-            <Link to="/Detail" state={{ movie }}>
-              <div className="movie-box">
-                <span className="img-box">
-                  <img src={baseURL + movie.backdrop_path} alt={movie.title} />
-                </span>
-                <div className="txt-box">
-                  <p className="title">{movie.title}</p>
-                  <p className="average">
-                    평점: {movie.vote_average.toFixed(2)}
-                  </p>
+    <section className="main-sec new-playing-movie">
+      <Swiper
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }}
+        slidesPerView={1.5}
+        spaceBetween={20}
+        centeredSlides={true}
+        loop={true}
+        modules={[Navigation]}
+        className="movie-swiper "
+      >
+        {nowPlayingMovie?.map((movie) => {
+          return (
+            <SwiperSlide key={movie.id}>
+              <Link to="/Detail" state={{ movie }}>
+                <div className="movie-box">
+                  <span className="img-box">
+                    <img
+                      src={baseURL + movie.backdrop_path}
+                      alt={movie.title}
+                    />
+                  </span>
+                  <div className="txt-box">
+                    <p className="title">{movie.title}</p>
+                    <p className="average">
+                      평점: {movie.vote_average.toFixed(2)}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </SwiperSlide>
-        );
-      })}
-      <div className="swiper-button-prev swiper-nav-btn">Previous</div>
-      <div className="swiper-button-next swiper-nav-btn">Next</div>
-    </Swiper>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
+        <div className="swiper-button-prev swiper-nav-btn">Previous</div>
+        <div className="swiper-button-next swiper-nav-btn">Next</div>
+      </Swiper>
+    </section>
   );
 }
 export default NowPlayingMovie;

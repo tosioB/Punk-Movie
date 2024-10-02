@@ -1,5 +1,5 @@
-@import "./theme.scss";
-@import "./font.scss";
+@import "/src/assets/style/theme.scss";
+@import "/src/assets/style/font.scss";
 
 * {
   padding: 0;
@@ -9,19 +9,34 @@
 html,
 body {
   // height: 100%;
-  padding-bottom: 10rem;
+  padding-bottom: 2rem;
   font-family: "Noto Sans KR" sans-serif;
   font-size: 62.5%;
   letter-spacing: -0.6px;
   background-color: $background-color;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1920px) {
   html {
     font-size: 50%; /* 화면이 작아질 때 폰트 크기 줄이기 */
   }
 }
+// @media (max-width: 1280px) {
+//   html {
+//     font-size: 40%; /* 화면이 작아질 때 폰트 크기 줄이기 */
+//   }
+// }
+@media (max-width: 768px) {
+  html {
+    font-size: 40%; /* 화면이 작아질 때 폰트 크기 줄이기 */
+  }
+}
+
 ul {
   list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $font-color;
 }
 .btn {
   height: 3.6rem;
@@ -53,7 +68,7 @@ ul {
   .main-sec {
     margin-top: 8rem;
     .main-title {
-      padding: 0 10rem;
+      padding: $page-paddings;
       margin-bottom: 2.4rem;
       font-size: 3.6rem;
       color: $font-color;

@@ -1,4 +1,14 @@
 .new-playing-movie {
+  .swiper-slide {
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity 0.6s;
+    &.swiper-slide-active {
+      opacity: 1;
+      pointer-events: initial;
+      transition: opacity 0.6s;
+    }
+  }
   .movie-box {
     border-radius: 2rem;
     overflow: hidden;
