@@ -5,7 +5,7 @@ import UpcomingMovie from "../../components/UpcomingMovie/UpcomingMovie";
 function Home() {
   return (
     <>
-      <div className="punk-movie">
+      <div className="home">
         <NowPlayingMovie />
         <UpcomingMovie />
         <PopularMovie />

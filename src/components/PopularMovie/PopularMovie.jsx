@@ -76,21 +76,24 @@ function Popular() {
   }, [inView, hasNextPage, isFetchingNextPage]);
 
   return (
-    <section className="main-sec popular-movie">
+    <section className="popular-movie">
       <h2 className="main-title">지금 뜨는 영화들</h2>
 
       <div className="movie-list">
         {data?.pages.map((page) => {
           return page.results.map((movie) => {
             return (
-              <Link key={movie.id} to="/Detail" state={{ movie }}>
-                <div className="movie-box">
-                  <span className="img-box">
-                    <img src={baseURL + movie.poster_path} alt={movie.title} />
-                  </span>
-                  <div className="txt-box">
-                    <p className="title">{movie.title}</p>
-                  </div>
+              <Link
+                key={movie.id}
+                to="/Detail"
+                state={{ movie }}
+                className="movie-box"
+              >
+                <span className="img-box">
+                  <img src={baseURL + movie.poster_path} alt={movie.title} />
+                </span>
+                <div className="txt-box">
+                  <p className="title">{movie.title}</p>
                 </div>
               </Link>
             );

@@ -14,23 +14,35 @@ body {
   font-size: 62.5%;
   letter-spacing: -0.6px;
   background-color: $background-color;
+  color: $font-color;
 }
 @media (max-width: 1920px) {
   html {
     font-size: 50%; /* 화면이 작아질 때 폰트 크기 줄이기 */
   }
 }
-// @media (max-width: 1280px) {
-//   html {
-//     font-size: 40%; /* 화면이 작아질 때 폰트 크기 줄이기 */
-//   }
-// }
 @media (max-width: 768px) {
   html {
     font-size: 40%; /* 화면이 작아질 때 폰트 크기 줄이기 */
   }
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
 
+/* scrollbar-thumb */
+::-webkit-scrollbar-thumb {
+  background-color: $soft-color;
+  border: 3px solid;
+  border-color: $border-color;
+  border-radius: 6px;
+}
+
+/* scrollbar-track */
+::-webkit-scrollbar-track {
+  background-color: $border-color;
+  border-radius: 6px;
+}
 ul {
   list-style: none;
 }
@@ -47,8 +59,30 @@ a {
   color: #fff;
   cursor: pointer;
 }
+.icon-btn {
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 0;
+  background: $main-color no-repeat 50% 50% / 2.4rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  &.no-bg-color {
+    background-color: transparent;
+  }
+  &.search {
+    background-image: url(/src/assets/images/search.svg);
+  }
+  &.close {
+    background-image: url(/src/assets/images/close.svg);
+  }
+}
 .inp-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   input[type="text"] {
+    width: 100%;
     height: 3.6rem;
     padding: 0 1.2rem;
     background-color: #fff;
@@ -65,14 +99,12 @@ a {
 }
 
 .punk-movie {
-  .main-sec {
+  .main-title {
+    padding: $page-paddings;
     margin-top: 8rem;
-    .main-title {
-      padding: $page-paddings;
-      margin-bottom: 2.4rem;
-      font-size: 3.6rem;
-      color: $font-color;
-    }
+    margin-bottom: 2.4rem;
+    font-size: 3.6rem;
+    color: $font-color;
   }
 
   .movie-swiper {

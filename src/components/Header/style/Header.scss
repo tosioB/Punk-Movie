@@ -1,7 +1,7 @@
 @import "/src/assets/style/theme.scss";
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   display: flex;
   align-items: center;
@@ -23,6 +23,35 @@
   .header-right {
     display: flex;
     gap: 0.8rem;
+    .search-box {
+      position: relative;
+      .inp-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0;
+        visibility: hidden;
+        input[type="text"] {
+          padding: 0;
+        }
+        .icon-btn.close {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      &.show {
+        .inp-box {
+          width: 30rem;
+          visibility: visible;
+          transition: width 0.3s;
+          input[type="text"] {
+            padding: 0 1.2rem;
+          }
+        }
+      }
+    }
     .btn-box {
       display: flex;
       gap: 0.8rem;

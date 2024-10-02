@@ -82,7 +82,7 @@ function UpcomingMovie() {
   }, [upcomingMovie2]);
 
   return (
-    <section className="main-sec upcoming-movie">
+    <section className="upcoming-movie">
       <h2 className="main-title">다가오는 영화</h2>
 
       <div className="movie-list left" ref={scrollRefLeft}>

@@ -43,7 +43,7 @@ function NowPlayingMovie() {
   }, []);
 
   return (
-    <section className="main-sec new-playing-movie">
+    <section className="new-playing-movie">
       <Swiper
         navigation={{
           nextEl: ".swiper-button-next",
@@ -59,20 +59,15 @@ function NowPlayingMovie() {
         {nowPlayingMovie?.map((movie) => {
           return (
             <SwiperSlide key={movie.id}>
-              <Link to="/Detail" state={{ movie }}>
-                <div className="movie-box">
-                  <span className="img-box">
-                    <img
-                      src={baseURL + movie.backdrop_path}
-                      alt={movie.title}
-                    />
-                  </span>
-                  <div className="txt-box">
-                    <p className="title">{movie.title}</p>
-                    <p className="average">
-                      평점: {movie.vote_average.toFixed(2)}
-                    </p>
-                  </div>
+              <Link to="/Detail" state={{ movie }} className="movie-box">
+                <span className="img-box">
+                  <img src={baseURL + movie.backdrop_path} alt={movie.title} />
+                </span>
+                <div className="txt-box">
+                  <p className="title">{movie.title}</p>
+                  <p className="average">
+                    평점: {movie.vote_average.toFixed(2)}
+                  </p>
                 </div>
               </Link>
             </SwiperSlide>
