@@ -1,4 +1,4 @@
-import NowPlayingMovie from "./components/NewPlayingMovie/NewPlayingMovie";
+import NowPlayingMovie from "./components/NowPlayingMovie/NowPlayingMovie";
 import PopularMovie from "./components/PopularMovie/PopularMovie";
 import UpcomingMovie from "./components/UpcomingMovie/UpcomingMovie";
 

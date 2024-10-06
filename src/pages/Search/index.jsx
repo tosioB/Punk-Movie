@@ -50,7 +50,9 @@ function Search() {
               state={{ movie }}
               className="movie-box"
             >
-              <span className="img-box">
+              <span
+                className={movie.backdrop_path ? "img-box" : "img-box no-img"}
+              >
                 {movie.backdrop_path ? (
                   <img src={baseURL + movie.backdrop_path} alt={movie.title} />
                 ) : (

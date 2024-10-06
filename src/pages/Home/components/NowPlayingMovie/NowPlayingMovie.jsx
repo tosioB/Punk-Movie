@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import baseURL from "@/assets/data/baseURL";
-import "@/pages/Home/style/NewPlayingMovie.scss";
+import "@/pages/Home/style/NowPlayingMovie.scss";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,7 +43,7 @@ function NowPlayingMovie() {
   }, []);
 
   return (
-    <section className="new-playing-movie">
+    <section className="now-playing-movie">
       <Swiper
         navigation={{
           nextEl: ".swiper-button-next",

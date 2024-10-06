@@ -32,7 +32,7 @@ const fetchPopularMovies = async (page) => {
 
 const useGetPopularMovies = () => {
   return useInfiniteQuery({
-    queryKey: ["pouplar-movie"],
+    queryKey: ["poplar-movie"],
     queryFn: ({ pageParam }) => {
       return fetchPopularMovies(pageParam);
     },

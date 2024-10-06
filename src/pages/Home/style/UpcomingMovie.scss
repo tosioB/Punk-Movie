@@ -9,13 +9,13 @@
     }
     .movie-box {
       min-width: 46rem;
-      border-radius: 4rem 2rem;
       overflow: hidden;
       position: relative;
       .img-box {
         display: block;
+        border-radius: 4rem 2rem;
+        overflow: hidden;
         aspect-ratio: 16 / 9;
-
         img {
           display: block;
           width: 100%;

@@ -26,10 +26,10 @@ body {
     font-size: 40%; /* 화면이 작아질 때 폰트 크기 줄이기 */
   }
 }
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
-
 /* scrollbar-thumb */
 ::-webkit-scrollbar-thumb {
   background-color: $soft-color;
@@ -37,7 +37,6 @@ body {
   border-color: $border-color;
   border-radius: 6px;
 }
-
 /* scrollbar-track */
 ::-webkit-scrollbar-track {
   background-color: $border-color;
@@ -96,6 +95,10 @@ a {
       background-color: $soft-color;
     }
   }
+}
+.no-img {
+  border: 1px solid;
+  border-color: $border-color;
 }
 
 .punk-movie {
