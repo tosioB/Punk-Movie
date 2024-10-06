@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import baseURL from "../../../assets/data/baseURL";
+import baseURL from "@/assets/data/baseURL";
 
 UpcomingMovieCard.propTypes = {
   movie: PropTypes.shape({

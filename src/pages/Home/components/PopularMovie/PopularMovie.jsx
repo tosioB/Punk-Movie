@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
-import "./style/PopularMovie.scss";
-import baseURL from "../../assets/data/baseURL";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import baseURL from "@/assets/data/baseURL";
+import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
+import "@/pages/Home/style/PopularMovie.scss";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const fetchPopularMovies = async (page) => {
@@ -47,14 +47,8 @@ const useGetPopularMovies = () => {
 };
 
 function Popular() {
-  const {
-    data,
-    isLoading,
-    error,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage
-  } = useGetPopularMovies();
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useGetPopularMovies();
 
   const { ref, inView } = useInView();
   const [loading, setLoading] = useState(false);

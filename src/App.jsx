@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import "./assets/style/Common.scss";
-import Home from "./pages/Home/Home";
-import Header from "./components/Header/Header";
-import Detail from "./pages/Detail/Detail";
-import Search from "./pages/Search/Search";
+import Header from "@/components/Header/Header";
+import Home from "@/pages/Home";
+import Detail from "@/pages/Detail";
+import Search from "@/pages/Search";
+import "@/assets/style/Common.scss";
 
 function App() {
   return (

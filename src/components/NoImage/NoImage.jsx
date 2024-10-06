@@ -1,5 +1,5 @@
-import "./style/noImage.scss";
-import NoImageSVG from "../../assets/images/no-image.svg";
+import "@/components/NoImage/style/noImage.scss";
+import NoImageSVG from "@/assets/images/no-image.svg";
 
 function NoImage() {
   return (

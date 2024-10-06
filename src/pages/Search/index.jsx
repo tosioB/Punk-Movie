@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import baseURL from "../../assets/data/baseURL";
+import baseURL from "@/assets/data/baseURL";
 import "./style/Search.scss";
-import NoImage from "../../components/NoImage/NoImage";
+import NoImage from "@/components/NoImage/NoImage";
 import { Link } from "react-router-dom";
 
 function Search() {

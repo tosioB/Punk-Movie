@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import "./style/UpcomingMovie.scss";
-import UpcomingMovieCard from "./UIElement/UpcomingMovieCard";
+import "@/pages/Home/style/UpcomingMovie.scss";
+import UpcomingMovieCard from "./UpcomingMovieCard/UpcomingMovieCard";
 
 function UpcomingMovie() {
   const [upcomingMovie1, setUpcomingMovie1] = useState();

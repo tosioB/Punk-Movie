@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import baseURL from "../../assets/data/baseURL";
-import "./style/newPlayingMovie.scss";
+import baseURL from "@/assets/data/baseURL";
+import "@/pages/Home/style/NewPlayingMovie.scss";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";

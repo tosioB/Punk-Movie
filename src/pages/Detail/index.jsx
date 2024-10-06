@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
-import baseURL from "../../assets/data/baseURL";
-import "./style/Detail.scss";
-import { genreData } from "../../assets/data/genreData";
+import baseURL from "@/assets/data/baseURL";
+import "@/pages/Detail/style/Detail.scss";
+import { genreData } from "@/assets/data/genreData";
 
 function Detail() {
   const location = useLocation();
